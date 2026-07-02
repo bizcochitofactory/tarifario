@@ -1,0 +1,58 @@
+BIZCOCHITO'S FACTORY — sitio estático para GitHub Pages
+==========================================================
+
+QUÉ ES ESTO
+-----------
+Es tu sitio en HTML + CSS + JS puro (sin build, sin backend, sin
+dependencias). Funciona igual en cualquier hosting de archivos estáticos:
+Neocities, GitHub Pages, Netlify, etc. No hace falta modificar nada del
+código para cambiar de uno a otro.
+
+Incluye:
+  index.html          Inicio
+  prints.html         Categoría Prints
+  stickers.html       Categoría Stickers y adhesivos
+  papeleria.html      Categoría Papelería
+  merch.html          Categoría Merch
+  emprendedores.html  Categoría Emprendedores
+  holograficos.html   Galería de tipos de holográfico
+  vinilo-uv.html      Galería de tipos de vinilo UV
+  404.html            Página de error (se sirve automáticamente)
+  css/style.css       Todos los estilos
+  js/main.js          Menú móvil + buscador + scroll a producto
+  js/products.js      Lista de productos para el buscador
+  images/             Todas las imágenes y GIFs (mascota, fondo, muestras)
+
+CÓMO SUBIRLO A GITHUB PAGES
+-----------------------------
+1. Entrá a github.com y creá una cuenta si no tenés.
+2. Creá un repositorio nuevo (botón "New repository").
+   - Si querés que la web quede en una URL simple tipo
+     https://tuusuario.github.io/, nombrá el repo exactamente
+     "tuusuario.github.io" (reemplazando tuusuario por tu usuario real).
+   - Si le ponés otro nombre (ej. "bizcochito-factory"), la web va a
+     quedar en https://tuusuario.github.io/bizcochito-factory/ — funciona
+     igual, solo cambia la URL.
+3. Dentro del repo, hacé clic en "Add file" → "Upload files" y arrastrá
+   TODO el contenido de esta carpeta (los .html sueltos, más las carpetas
+   css/, js/ e images/ completas, manteniendo la estructura).
+4. Confirmá el commit ("Commit changes").
+5. Andá a Settings → Pages. En "Source" elegí la rama "main" y carpeta
+   "/ (root)". Guardá.
+6. Esperá 1-2 minutos y la web va a estar publicada en la URL que te
+   muestra esa misma pantalla.
+
+SI QUERÉS ACTUALIZAR PRECIOS MÁS ADELANTE
+------------------------------------------
+Pasame el Excel de precios actualizado (o los datos puntuales que cambien)
+y yo regenero los archivos. No hace falta tocar el HTML a mano.
+
+COSAS A TENER EN CUENTA
+------------------------
+- GitHub Pages no restringe archivos de video como Neocities gratis, así
+  que si en algún momento querés volver a usar .mp4 en vez de los .gif de
+  holograficos.html, es posible — avisame y los reconvierto.
+- El buscador funciona 100% del lado del cliente, buscando sobre la lista
+  de productos embebida en js/products.js.
+- Los links directos a un producto puntual usan anclas, ej:
+  prints.html#prints-papel-obra-80gr
