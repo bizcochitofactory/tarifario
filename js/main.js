@@ -40,7 +40,8 @@ document.querySelectorAll('[data-nav-toggle]').forEach((btn) => {
         const a = document.createElement('a');
         a.className = 'search-result-item';
         const slug = CATEGORY_SLUGS[p.category];
-        a.href = slug ? `${slug}.html#${p.slug}` : '#';
+        const root = window.SITE_ROOT || '';
+        a.href = slug ? `${root}${slug}/#${p.slug}` : '#';
         a.innerHTML = `<p class="name">${p.name}</p><p class="cat">${p.category}</p>`;
         results.appendChild(a);
       });
