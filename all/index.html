@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todos los precios · Bizcochito's Factory</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Página pensada solo para capturas: sin nav, sin footer, cards en columna */
+  body { padding: 24px 0 60px; }
+  .all-cat-title {
+    max-width: 700px; margin: 40px auto 12px; padding: 0 16px;
+    font-family: 'Poppins', sans-serif; color: #C2185B; font-size: 1.5rem; font-weight: 800;
+  }
+  .all-cat-title:first-of-type { margin-top: 0; }
+  .cards { max-width: 700px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 20px; }
+  #loading { text-align: center; padding: 60px 16px; font-family: 'Poppins', sans-serif; color: #3641a5; }
+</style>
+</head>
+<body>
+<div id="loading">Cargando todas las tablas de precios…</div>
+<div id="all-content"></div>
+
+<script>
+const CATEGORY_PAGES = [
+  { slug: 'stickers', label: 'Stickers y adhesivos' },
+  { slug: 'papeleria', label: 'Papelería' },
+  { slug: 'prints', label: 'Prints' },
+  { slug: 'merch', label: 'Merch' },
+  { slug: 'emprendedores', label: 'Emprendedores' },
+];
+
+async function buildAll() {
+  const container = document.getElementById('all-content');
+  const loading = document.getElementById('loading');
+  for (const cat of CATEGORY_PAGES) {
+    try {
+      const res = await fetch(`../${cat.slug}/`);
+      const text = await res.text();
+      const doc = new DOMParser().parseFromString(text, 'text/html');
+      const cardsEl = doc.querySelector('.cards');
+      if (!cardsEl) continue;
+
+      const title = document.createElement('h2');
+      title.className = 'all-cat-title';
+      title.textContent = cat.label;
+      container.appendChild(title);
+
+      const cardsWrap = document.createElement('div');
+      cardsWrap.className = 'cards';
+      cardsWrap.innerHTML = cardsEl.innerHTML;
+      container.appendChild(cardsWrap);
+    } catch (e) {
+      console.error('No se pudo cargar', cat.slug, e);
+    }
+  }
+  loading.remove();
+}
+
+buildAll();
+</script>
+</body>
+</html>
