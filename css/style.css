@@ -507,3 +507,17 @@ body.alt-bg-3d {
   background: #fff4f9; border: 1px dashed #ffd0e4; border-radius: 10px;
   padding: 8px 12px; color: rgba(54,65,165,0.7); font-style: italic; font-size: 0.82rem;
 }
+.instructivo-hero { text-align: center; margin-bottom: 16px; }
+.instructivo-hero img {
+  max-width: 320px; width: 100%; border-radius: 16px; display: inline-block;
+  box-shadow: 0 6px 16px rgba(54,65,165,0.12);
+}
+.instructivo-block .body li.visual-inline {
+  list-style: none; margin-left: -20px; padding: 6px 0;
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.instructivo-block .body li.visual-inline img {
+  max-width: 260px; width: 100%; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(54,65,165,0.1);
+}
+.instructivo-block .body li.visual-inline.multi img { max-width: 160px; }
