@@ -6,6 +6,20 @@ document.querySelectorAll('[data-nav-toggle]').forEach((btn) => {
   });
 });
 
+// ---------- Desktop nav dropdown ("Más") ----------
+document.querySelectorAll('[data-nav-dropdown-toggle]').forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const menu = btn.parentElement.querySelector('[data-nav-dropdown-menu]');
+    const wasOpen = menu.classList.contains('open');
+    document.querySelectorAll('[data-nav-dropdown-menu]').forEach((m) => m.classList.remove('open'));
+    if (menu && !wasOpen) menu.classList.add('open');
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('[data-nav-dropdown-menu]').forEach((m) => m.classList.remove('open'));
+});
+
 // ---------- Search ----------
 (function () {
   const CATEGORY_SLUGS = {
@@ -14,6 +28,7 @@ document.querySelectorAll('[data-nav-toggle]').forEach((btn) => {
     "Papelería": "papeleria",
     "Emprendedores": "emprendedores",
     "Merch": "merch",
+    "Sublimación": "sublimacion",
   };
 
   function setupSearch(root) {
