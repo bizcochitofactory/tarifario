@@ -1,0 +1,55 @@
+BIZCOCHITO'S FACTORY — sitio estático para GitHub Pages
+==========================================================
+
+QUÉ ES ESTO
+-----------
+Es tu sitio en HTML + CSS + JS puro (sin build, sin backend, sin
+dependencias). Las páginas de categoría están organizadas en carpetas
+con un index.html adentro, para que la URL no muestre ".html"
+(ej: tarifario/stickers/ en vez de tarifario/stickers.html).
+
+Incluye:
+  index.html              Inicio (queda en la raíz)
+  404.html                Página de error (tiene que quedar en la raíz;
+                           GitHub Pages la busca ahí automáticamente)
+  emprendedores/index.html
+  stickers/index.html
+  papeleria/index.html
+  prints/index.html
+  merch/index.html
+  holograficos/index.html
+  vinilo-uv/index.html
+  css/style.css           Todos los estilos
+  js/main.js              Menú móvil + buscador + scroll a producto
+  js/products.js          Lista de productos para el buscador
+  images/                 Todas las imágenes, GIFs y favicons
+  videos/                 Videos de la galería de holográficos
+
+CÓMO SUBIRLO A GITHUB PAGES
+-----------------------------
+1. Entrá a tu repositorio en GitHub.
+2. Subí TODO el contenido de esta carpeta (los archivos sueltos + todas
+   las subcarpetas, manteniendo la estructura exacta: cada carpeta de
+   categoría con su index.html adentro).
+3. Si ya tenías los .html sueltos (emprendedores.html, stickers.html,
+   etc.) en la raíz del repo, borralos después de subir las carpetas
+   nuevas, para que no quede duplicado.
+4. Settings → Pages ya debería estar configurado (rama "main", carpeta
+   "/root"). No hace falta tocar nada ahí.
+5. Esperá 1-2 minutos y probá entrar a tarifario/stickers/ (sin .html)
+   — debería cargar la página de Stickers directamente.
+
+SI QUERÉS ACTUALIZAR PRECIOS MÁS ADELANTE
+------------------------------------------
+Pasame el Excel de precios actualizado y yo regenero los archivos.
+No hace falta tocar el HTML a mano.
+
+COSAS A TENER EN CUENTA
+------------------------
+- El buscador funciona 100% del lado del cliente, buscando sobre la lista
+  de productos embebida en js/products.js.
+- Los links directos a un producto puntual ahora usan, por ejemplo:
+  prints/#prints-papel-obra-80gr
+- 404.html se queda en la raíz a propósito: es el único archivo que
+  GitHub Pages sabe encontrar automáticamente para mostrar errores, y
+  convertirlo en carpeta rompería ese comportamiento.
