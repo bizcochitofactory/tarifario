@@ -20,6 +20,73 @@
 <meta name="twitter:image" content="https://bizcochitofactory.shop/images/og-image.jpg">
 
 <link rel="stylesheet" href="../css/style.css">
+<style>.cb-sec{padding:0 20px 18px}
+.cb-sec h4{margin:0 0 4px;font-size:.95rem;font-weight:700;color:var(--azul)}
+.cb-hint{font-size:.75rem;color:rgba(54,65,165,.7);margin:0 0 10px}
+.cb-guests{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:0 20px 18px;font-size:.85rem;font-weight:600}
+.cb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.cb-opt{background:#fff;border:1.5px solid rgba(54,65,165,.15);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;transition:border-color .15s,background .15s;display:flex;flex-direction:column}
+.cb-opt:hover{border-color:var(--rosa-cat)}
+.cb-opt.on{background:var(--rosa-fila);border-color:var(--rosa)}
+.cb-nm{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:600;font-size:.88rem}
+.cb-tick{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(54,65,165,.3);display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;flex-shrink:0}
+.cb-opt.on .cb-tick{background:var(--rosa);border-color:var(--rosa)}
+.cb-sub{font-size:.72rem;color:rgba(54,65,165,.7);margin-top:2px}
+.cb-pr{font-weight:700;margin-top:6px;font-size:.9rem}
+.cb-old{font-size:.72rem;font-weight:400;text-decoration:line-through;color:rgba(54,65,165,.5);margin-left:6px}
+.cb-pill{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--azul);background:var(--crema);border:1px solid rgba(54,65,165,.25);border-radius:999px;padding:4px 12px;cursor:pointer}
+.cb-pill:hover{background:var(--hover-bg)}
+.cb-pill.act{background:var(--rosa);border-color:var(--rosa);color:#fff}
+.cb-step{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:.75rem}
+.cb-step b{min-width:26px;text-align:center;font-size:.9rem}
+.cb-seg{display:flex;gap:6px;margin-top:8px}
+.cb-sum{padding:0 20px 20px}
+.cb-ln{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;padding:6px 0;border-bottom:1px dashed rgba(54,65,165,.18)}
+.cb-ln.t{border-bottom:0;font-weight:700;font-size:1rem;padding-top:12px}
+.cb-empty{font-size:.82rem;color:rgba(54,65,165,.6);margin:0}
+.cb-note{font-size:.72rem;color:rgba(54,65,165,.7);margin:8px 0 0}
+.cb-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.cb-wa{background:var(--verde);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:700;font-size:.82rem;cursor:pointer}
+.cb-bar{position:sticky;bottom:12px;z-index:5;margin:16px 0 0;background:var(--azul);color:var(--crema);border-radius:18px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 8px 20px rgba(54,65,165,.25)}
+.cb-bar span{font-size:.8rem;opacity:.85}
+.cb-bar b{font-size:1.35rem}
+@media (max-width:600px){
+.cb-sec{padding:0 14px 16px}
+.cb-guests{padding:0 14px 16px}
+.cb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cb-opt{aspect-ratio:1/1;padding:10px 12px}
+.cb-nm{font-size:.82rem;align-items:flex-start}
+.cb-pr{margin-top:auto;padding-top:6px}
+.cb-seg{flex-wrap:wrap;gap:4px}
+.cb-seg .cb-pill{padding:3px 8px;font-size:.68rem}
+.cb-step{flex-wrap:wrap;gap:6px}
+}
+.cb-combo{margin-bottom:0}
+.cb-head{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:18px 20px;cursor:pointer;font-family:inherit;color:var(--azul)}
+.cb-head:hover{background:rgba(255,234,244,.6)}
+.cb-ht{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.cb-title{font-size:1.1rem;font-weight:700;color:var(--rosa)}
+.cb-desc{font-size:.76rem;color:rgba(54,65,165,.75);line-height:1.4}
+.cb-from{font-size:.78rem;font-weight:700;white-space:nowrap;text-align:right}
+.cb-from small{display:block;font-size:.65rem;font-weight:500;color:rgba(54,65,165,.65)}
+.cb-chev{width:26px;height:26px;border-radius:50%;background:var(--rosa-fila);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s;font-size:.8rem}
+.cb-combo.open .cb-chev{transform:rotate(180deg);background:var(--rosa);color:#fff}
+.cb-body{display:none;border-top:1px dashed rgba(54,65,165,.18);padding-top:16px}
+.cb-combo.open .cb-body{display:block}
+.cb-body .cb-sum{padding-top:4px}
+.cb-qty{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 20px 14px;font-size:.85rem;font-weight:600}
+.cb-box{padding:0 20px 16px}
+.cb-gift{font-size:.78rem;background:var(--rosa-fila);border-radius:12px;padding:10px 14px;margin:10px 0 0;color:var(--azul)}
+@media (max-width:600px){
+.cb-head{padding:14px;gap:8px}
+.cb-from{font-size:.72rem}
+.cb-qty,.cb-box,.cb-sum{padding-left:14px;padding-right:14px}
+}
+.cb-list{margin:0;padding-left:20px;font-size:.88rem;line-height:1.7;color:var(--azul)}
+@media (max-width:600px){.cb-list{font-size:.85rem}}
+.cb-opt.flat{aspect-ratio:auto}
+@media (max-width:600px){.cb-opt.flat{aspect-ratio:auto;min-height:0}}
+</style>
 </head>
 <body>
 <nav class="navbar">
@@ -42,15 +109,175 @@
 <div class="wrap">
 <div class="page-header">
   <h1>Combos</h1>
-  <p>Próximamente.</p>
+  <p>Elegí un combo y armalo a tu medida. El total se va sumando.</p>
 </div>
-<div class="coming-soon-card">
-  <span class="badge">Próximamente</span>
-  <h2>¡Bizcochito está cocinando esta sección!</h2>
-  <p>Volvé a pasar más adelante.</p>
-</div>
+<div class="cards" id="cb-list"></div>
+<div class="cb-bar" id="cb-bar" style="display:none"></div>
 </div>
 </main>
+<script>
+var SNAP=[{"sizes":["3cm","4cm","5cm","6cm","7cm"],"variants":["Autoadhesivo","OPP (Blanco o clear)"],"prices":[[[[1,240],[50,120],[100,55],[200,50]],[[1,330],[50,165],[100,135],[200,130]]],[[[1,430],[50,215],[100,95],[200,90]],[[1,600],[50,300],[100,240],[200,235]]],[[[1,750],[50,375],[100,160],[200,155]],[[1,1050],[50,525],[100,420],[200,415]]],[[[1,1068],[50,534],[100,225],[200,220]],[[1,1500],[50,750],[100,595],[200,590]]],[[[1,1250],[50,625],[100,265],[200,255]],[[1,1750],[50,875],[100,695],[200,690]]]],"lam":[[{"label":"Lam. Holo","price":30,"kind":"u"}],[{"label":"Lam. Holo","price":60,"kind":"u"}],[{"label":"Lam. Holo","price":100,"kind":"u"}],[{"label":"Lam. Holo","price":140,"kind":"u"}],[{"label":"Lam. Holo","price":160,"kind":"u"}]],"sizeHead":"Tamaño","id":"stickers-comunes","cat":"Stickers","name":"Stickers comunes","desc":"Autoadhesivo común y OPP (plástico resistente a salpicaduras)","unit":"unidad","bifaz":false},{"sizes":["3cm","4cm","5cm","6cm","7cm"],"variants":["Blanco","Transparente","Holográfico"],"prices":[[[[30,205],[50,195],[100,185],[200,175]],[[30,260],[50,250],[100,240],[200,230]],[[30,365],[50,355],[100,345],[200,335]]],[[[30,340],[50,330],[100,320],[200,310]],[[30,435],[50,425],[100,415],[200,405]],[[30,675],[50,665],[100,655],[200,645]]],[[[30,490],[50,480],[100,470],[200,460]],[[30,635],[50,625],[100,615],[200,605]],[[30,995],[50,985],[100,975],[200,965]]],[[[30,750],[50,740],[100,730],[200,720]],[[30,975],[50,965],[100,955],[200,945]],[[30,1535],[50,1525],[100,1515],[200,1505]]],[[[30,970],[50,960],[100,950],[200,940]],[[30,1265],[50,1255],[100,1245],[200,1235]],[[30,1995],[50,1985],[100,1975],[200,1965]]]],"lam":[[],[],[],[],[]],"sizeHead":"Tamaño","id":"stickers-vinilo-uv","cat":"Stickers","name":"Stickers vinilo UV","desc":"Vinilo blanco, transparente y holográfico","unit":"unidad","bifaz":false},{"sizes":["6cm","7cm","8cm","9cm","10cm"],"variants":["Precio"],"prices":[[[[30,1050],[50,1040],[100,1030],[200,1020]]],[[[30,1360],[50,1350],[100,1340],[200,1330]]],[[[30,1840],[50,1830],[100,1820],[200,1810]]],[[[30,2395],[50,2385],[100,2375],[200,2365]]],[[[30,2630],[50,2620],[100,2610],[200,2600]]]],"lam":[[],[],[],[],[]],"sizeHead":"Tamaño","id":"suncatchers","cat":"Stickers","name":"Suncatchers","desc":"Stickers transparentes para ventanas","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Autoadhesivo","OPP (Blanco o clear)"],"prices":[[[[1,6250],[2,3875],[26,3700]],[[1,9000],[2,5250],[26,4950]]]],"lam":[[]],"sizeHead":"Cantidad","id":"planchitas-de-stickers","cat":"Stickers","name":"Planchitas de stickers","desc":"Planchitas de stickers con medio corte para fácil despegue de stickers. Servicio por pliego, no por planchita. No hay mínimo de planchitas por hoja ya que vos decidís cuántas poner por hoja. Se entrega troquelado y con corte completo del borde de la planchita. Se proporcionará instructivo para el armado del troquelado para facilitar el corte. ¡Siempre estoy dispuesta a ayudar ante cualquier duda! Cantidades aproximadas (tamaños habituales) Autoadhesivo común y OPP 29x41cm: 4 planchitas de 12.5×18cm · 9 de 9×12.5cm · 12 de 6×13cm · 12 de 9×9cm Vinilo por cada 100×50cm: 16 planchitas de 12.5×18cm · 44 de 9×12.5cm · 58 de 6×13cm · 58 de 9×9cm No tiene que ser en estos tamaños, son solo ejemplos comunes para saber las cantidades que entran por hoja.","unit":"unidad","bifaz":false},{"sizes":["100x50cm"],"variants":["Vinilo Blanco","Vinilo Transparente","Vinilo Holográfico"],"prices":[[[[1,19625]],[[1,29000]],[[1,70200]]]],"lam":[[]],"sizeHead":"Tamaño","id":"planchitas-de-stickers-2","cat":"Stickers","name":"Planchitas de stickers — Vinilo","desc":"","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Autoadhesivo A4","OPP A4 (Blanco o clear)"],"prices":[[[[1,2400],[2,2000],[26,1900]],[[1,3150],[2,2560],[26,2475]]]],"lam":[[]],"sizeHead":"Cantidad","id":"hojas-de-autoadhesivo","cat":"Stickers","name":"Hojas de Autoadhesivo","desc":"Autoadhesivo común y OPP","unit":"unidad","bifaz":false},{"sizes":["100x50cm"],"variants":["Vinilo Blanco","Vinilo Transparente","Vinilo Holográfico"],"prices":[[[[1,12000]],[[1,23400]],[[1,52500]]]],"lam":[[]],"sizeHead":"Tamaño","id":"hojas-de-autoadhesivo-2","cat":"Stickers","name":"Hojas de Autoadhesivo — Vinilo","desc":"","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Simple","Bifaz"],"prices":[[[[1,2400],[15,1960],[30,1860]],[[1,3380],[15,2760],[30,2600]]]],"lam":[[{"label":"Lam. Holo","price":260,"kind":"cara"}]],"sizeHead":"Cantidad","id":"entradas","cat":"Papelería","name":"Entradas","desc":"Papel 300gr laminado","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Precio"],"prices":[[[[1,5200],[2,3920],[10,3580]]]],"lam":[[{"label":"Lam. Holo","price":2000,"kind":"cara"}]],"sizeHead":"Cantidad","id":"cuadernos-a5","cat":"Papelería","name":"Cuadernos A5","desc":"Engrapados de 40 hojas","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Simple Faz","Doble Faz"],"prices":[[[[1,590],[15,415],[30,375]],[[1,640],[15,525],[30,470]]]],"lam":[[{"label":"Lam. Holo","price":260,"kind":"cara"}]],"sizeHead":"Cantidad","id":"marcapaginas-simple-5-14cm","cat":"Papelería","name":"Marcapáginas Simple (5×14cm)","desc":"Papel 300gr laminado","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Simple Faz"],"prices":[[[[1,955],[14,560],[28,495]]]],"lam":[[{"label":"Lam. Holo","price":300,"kind":"cara"}]],"sizeHead":"Cantidad","id":"marcapaginas-imantado-simple-4-10-10cm","cat":"Papelería","name":"Marcapáginas Imantado simple (4×10+10cm)","desc":"Con imán para cerrar","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Simple Faz"],"prices":[[[[1,2000],[12,910],[24,810]]]],"lam":[[{"label":"Lam. Holo","price":320,"kind":"cara"}]],"sizeHead":"Cantidad","id":"marcapaginas-imantado-con-forma-7-7-7cm","cat":"Papelería","name":"Marcapáginas Imantado con forma (7×7+7cm)","desc":"Con imán y forma especial","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Simple","Bifaz"],"prices":[[[[1,1540],[20,770],[40,545],[200,485]],[[1,1670],[20,835],[40,685],[200,615]]]],"lam":[[{"label":"Lam. Holo","price":200,"kind":"cara"}]],"sizeHead":"Cantidad","id":"photocards","cat":"Papelería","name":"Photocards","desc":"Papel 300gr laminadas de ambas caras con esquinas redondeadas","unit":"unidad","bifaz":false},{"sizes":["Mini (5.4×8.6cm)","Cuadrado (7.2×8.6cm)","Larga (5.4×15cm)","Ancha (10.8×8.6cm)"],"variants":["Simple","Bifaz"],"prices":[[[[1,1260],[20,630],[40,445]],[[1,1370],[20,685],[40,560]]],[[[1,1320],[20,660],[40,470]],[[1,1440],[20,720],[40,590]]],[[[1,1890],[20,945],[40,670]],[[1,2050],[20,1025],[40,840]]],[[[1,2640],[20,1320],[40,935]],[[1,2870],[20,1435],[40,1175]]]],"lam":[[{"label":"Lam. Holo","price":200,"kind":"cara"}],[{"label":"Lam. Holo","price":200,"kind":"cara"}],[{"label":"Lam. Holo","price":300,"kind":"cara"}],[{"label":"Lam. Holo","price":400,"kind":"cara"}]],"sizeHead":"Tamaño","id":"polaroids","cat":"Papelería","name":"Polaroids","desc":"Papel 300gr laminado, varios tamaños","unit":"unidad","bifaz":false},{"sizes":["Simple","Bifaz"],"variants":["A4"],"prices":[[[[1,500],[2,475],[26,450]]],[[[1,750],[2,725],[26,700]]]],"lam":[[{"label":"Laminado A4","price":350,"kind":"cara"}],[{"label":"Laminado A4","price":350,"kind":"cara"}]],"sizeHead":"Tipo","id":"prints-papel-obra-80gr","cat":"Prints","name":"Prints — Papel Obra 80gr","desc":"Impresión en papel obra","unit":"unidad","bifaz":false},{"sizes":["A3","A4","A5","A5 cuadrados","A6"],"variants":["150gr","220gr","300gr"],"prices":[[[[1,2000],[2,1660],[26,1560]],[[1,2200],[2,1800],[26,1700]],[[1,2400],[2,1960],[26,1860]]],[[[1,1000],[4,830],[52,780]],[[1,1100],[4,900],[52,850]],[[1,1200],[4,980],[52,930]]],[[[1,625],[8,520],[104,490]],[[1,690],[8,565],[104,530]],[[1,750],[8,615],[104,580]]],[[[1,500],[12,415],[156,390]],[[1,550],[12,450],[156,425]],[[1,600],[12,490],[156,465]]],[[[1,375],[16,310],[208,295]],[[1,415],[16,340],[208,320]],[[1,450],[16,370],[208,350]]]],"lam":[[{"label":"Laminado","price":700,"kind":"cara"}],[{"label":"Laminado","price":350,"kind":"cara"}],[{"label":"Laminado","price":180,"kind":"cara"},{"label":"Lam. Holo","price":1000,"kind":"cara"}],[{"label":"Laminado","price":90,"kind":"cara"},{"label":"Lam. Holo","price":650,"kind":"cara"}],[{"label":"Laminado","price":60,"kind":"cara"},{"label":"Lam. Holo","price":500,"kind":"cara"}]],"sizeHead":"Tamaño","id":"prints-papel-ilustracion-una-cara","cat":"Prints","name":"Prints — Papel Ilustración (simple)","desc":"Impresión en simple, papel ilustración","unit":"unidad","bifaz":false},{"sizes":["A3","A4","A5","A5 cuadrados","A6"],"variants":["150gr","220gr","300gr"],"prices":[[[[1,3000],[2,2460],[26,2320]],[[1,3180],[2,2600],[26,2460]],[[1,3380],[2,2760],[26,2600]]],[[[1,1500],[4,1230],[52,1160]],[[1,1590],[4,1300],[52,1230]],[[1,1690],[4,1380],[52,1300]]],[[[1,940],[8,770],[104,725]],[[1,995],[8,815],[104,770]],[[1,1055],[8,865],[104,815]]],[[[1,750],[12,615],[156,580]],[[1,795],[12,650],[156,615]],[[1,845],[12,690],[156,650]]],[[[1,565],[16,460],[208,435]],[[1,600],[16,490],[208,460]],[[1,635],[16,520],[208,490]]]],"lam":[[{"label":"Laminado","price":700,"kind":"cara"}],[{"label":"Laminado","price":350,"kind":"cara"}],[{"label":"Laminado","price":180,"kind":"cara"},{"label":"Lam. Holo","price":1000,"kind":"cara"}],[{"label":"Laminado","price":90,"kind":"cara"},{"label":"Lam. Holo","price":650,"kind":"cara"}],[{"label":"Laminado","price":60,"kind":"cara"},{"label":"Lam. Holo","price":500,"kind":"cara"}]],"sizeHead":"Tamaño","id":"prints-papel-ilustracion-bifaz","cat":"Prints","name":"Prints — Papel Ilustración (bifaz)","desc":"Impresión bifaz, papel ilustración","unit":"unidad","bifaz":true},{"sizes":["A3","A4","A5","A5 cuadrados","A6"],"variants":["120gr","240gr"],"prices":[[[[1,2000],[2,1660],[26,1560]],[[1,2400],[2,1960],[26,1860]]],[[[1,1000],[4,830],[52,780]],[[1,1200],[4,980],[52,930]]],[[[1,625],[8,520],[104,490]],[[1,750],[8,615],[104,580]]],[[[1,500],[12,415],[156,390]],[[1,600],[12,490],[156,465]]],[[[1,375],[16,310],[208,295]],[[1,450],[16,370],[208,350]]]],"lam":[[{"label":"Laminado","price":700,"kind":"cara"}],[{"label":"Laminado","price":350,"kind":"cara"}],[{"label":"Laminado","price":180,"kind":"cara"},{"label":"Lam. Holo","price":1000,"kind":"cara"}],[{"label":"Laminado","price":90,"kind":"cara"},{"label":"Lam. Holo","price":650,"kind":"cara"}],[{"label":"Laminado","price":60,"kind":"cara"},{"label":"Lam. Holo","price":500,"kind":"cara"}]],"sizeHead":"Tamaño","id":"prints-papel-chambril-una-cara","cat":"Prints","name":"Prints — Papel Chambril (simple)","desc":"Impresión en simple, papel chambril","unit":"unidad","bifaz":false},{"sizes":["A3","A4","A5","A5 cuadrados","A6"],"variants":["120gr","240gr"],"prices":[[[[1,3000],[2,2460],[26,2320]],[[1,3380],[2,2760],[26,2600]]],[[[1,1500],[4,1230],[52,1160]],[[1,1690],[4,1380],[52,1300]]],[[[1,940],[8,770],[104,725]],[[1,1055],[8,865],[104,815]]],[[[1,750],[12,615],[156,580]],[[1,845],[12,690],[156,650]]],[[[1,565],[16,460],[208,435]],[[1,635],[16,520],[208,490]]]],"lam":[[{"label":"Laminado","price":700,"kind":"cara"}],[{"label":"Laminado","price":350,"kind":"cara"}],[{"label":"Laminado","price":180,"kind":"cara"},{"label":"Lam. Holo","price":1000,"kind":"cara"}],[{"label":"Laminado","price":90,"kind":"cara"},{"label":"Lam. Holo","price":650,"kind":"cara"}],[{"label":"Laminado","price":60,"kind":"cara"},{"label":"Lam. Holo","price":500,"kind":"cara"}]],"sizeHead":"Tamaño","id":"prints-papel-chambril-bifaz","cat":"Prints","name":"Prints — Papel Chambril (bifaz)","desc":"Impresión bifaz, papel chambril","unit":"unidad","bifaz":true},{"id":"acrilicos","cat":"Merch","name":"Acrílicos","desc":"Se vende por sección. Si salen más productos, no hay cobro adicional.","unit":"sección","sizes":["Sección 1 14×19cm","Sección 2 28×19cm","Sección 3 28×28cm","Sección 4 28×38cm"],"variants":["Precio"],"prices":[[[[1,28000]]],[[[1,40000]]],[[[1,60000]]],[[[1,80000]]]],"lam":[[],[],[],[]],"bifaz":false,"sizeHead":"Sección","addons":[{"n":"Ganchito para arito","p":200},{"n":"Cuerda para charm","p":200},{"n":"Imán","p":200},{"n":"Ganchito para pin","p":200},{"n":"Anillo (cotillón)","p":200},{"n":"Hebilla","p":200},{"n":"Pin para Crocs","p":200},{"n":"Argolla llavero","p":300},{"n":"Cuerda para charm rosa","p":300},{"n":"Cuerda para charm celeste","p":300},{"n":"Cuerda para charm lila","p":300},{"n":"Cuerda para charm con trenza celeste","p":300},{"n":"Cuerda para charm con trenza lila","p":300},{"n":"Cuerda para charm con trenza rosa","p":300},{"n":"Cadena de bolitas","p":300},{"n":"Mosquetón candado","p":450}],"info":{"2cm":[24,54,81,108],"3cm":[12,28,49,63],"4cm":[6,15,25,35],"5cm":[6,12,16,24],"6cm":[4,8,16,20],"7cm":[2,6,9,12],"8cm":[2,6,9,12],"9cm":[1,2,4,6],"10cm":[1,2,4,6]}},{"sizes":[""],"variants":["Común","Holográfico"],"prices":[[[[1,2000],[12,950],[24,650],[48,550]],[[1,2500],[12,1150],[24,850],[48,650]]]],"lam":[[]],"sizeHead":"Cantidad","id":"pins-38mm","cat":"Merch","name":"Pins 38mm","desc":"Prendedores como tapa de botella ancha","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Común","Holográfico"],"prices":[[[[1,2500],[6,1100],[12,750],[24,600]],[[1,3000],[6,1500],[12,950],[24,750]]]],"lam":[[]],"sizeHead":"Cantidad","id":"pins-55mm","cat":"Merch","name":"Pins 55mm","desc":"Prendedores como la parte delgada de una tarjeta","unit":"unidad","bifaz":false},{"sizes":["4cm","5cm","6cm","7cm"],"variants":["Precio"],"prices":[[[[1,1160],[15,580],[30,180],[100,165]]],[[[1,1860],[15,930],[30,320],[100,300]]],[[[1,2780],[15,1390],[30,455],[100,415]]],[[[1,3460],[15,1730],[30,530],[100,485]]]],"lam":[[{"label":"Lam. Holo","price":60,"kind":"u"}],[{"label":"Lam. Holo","price":100,"kind":"u"}],[{"label":"Lam. Holo","price":140,"kind":"u"}],[{"label":"Lam. Holo","price":160,"kind":"u"}]],"sizeHead":"Tamaño","id":"imanes","cat":"Merch","name":"Imanes","desc":"Impresos en papel 300gr laminado con imán en el dorso, tipo imán de heladera","unit":"unidad","bifaz":false},{"sizes":["Cartel largo reforzado con cartón (15×46cm)","Cartel cuadrado reforzado con cartón (30×30cm)"],"variants":["Precio"],"prices":[[[[1,10500]]],[[[1,10500]]]],"lam":[[],[]],"sizeHead":"Producto","id":"carteleria","cat":"Emprendedores","name":"Cartelería","desc":"Carteles para ferias y eventos","unit":"unidad","bifaz":false},{"sizes":["5x3.5cm","7.5x5cm","10x7.5cm","15x10cm","20x15cm"],"variants":["Precio"],"prices":[[[[1,320],[10,160],[20,130]]],[[[1,850],[10,425],[20,350]]],[[[1,1700],[10,850],[20,700]]],[[[1,5100],[10,2550],[20,2100]]],[[[1,10200],[10,5100],[20,4200]]]],"lam":[[],[],[],[],[]],"sizeHead":"Tamaño","id":"cartelitos-de-precios-plastificados","cat":"Emprendedores","name":"Cartelitos de precios plastificados","desc":"Se pueden hacer otros tamaños","unit":"unidad","bifaz":false},{"sizes":["Muestrario 30×30 para reja reforzado con cartón","Muestrario 30×30 para reja reforzado con cartón con imanes","Muestrario 30×30 para reja reforzado con cartón con ganchitos","2 Muestrarios 35×35 de vinilo para cubrir paneles"],"variants":["Precio"],"prices":[[[[1,10500]]],[[[1,18000]]],[[[1,18000]]],[[[1,10000]]]],"lam":[[],[],[],[]],"sizeHead":"Producto","id":"muestrarios","cat":"Emprendedores","name":"Muestrarios","desc":"Se tienen que proporcionar imágenes, texturas o colores para el armado del archivo","unit":"unidad","bifaz":false},{"sizes":["5×5cm","7×5cm","9×5cm","10×8cm"],"variants":["Ilustración 220gr","Ilustración 220gr bifaz","Ilustración 300gr","Ilustración 300gr bifaz"],"prices":[[[[1,255],[50,85],[100,70],[300,65]],[[1,360],[50,120],[100,100],[300,95]],[[1,270],[50,90],[100,75],[300,70]],[[1,390],[50,130],[100,105],[300,100]]],[[[1,315],[50,105],[100,85],[300,80]],[[1,450],[50,150],[100,125],[300,115]],[[1,345],[50,115],[100,95],[300,90]],[[1,480],[50,160],[100,130],[300,125]]],[[[1,420],[50,140],[100,115],[300,105]],[[1,600],[50,200],[100,165],[300,155]],[[1,450],[50,150],[100,125],[300,115]],[[1,630],[50,210],[100,175],[300,165]]],[[[1,705],[50,235],[100,195],[300,185]],[[1,1020],[50,340],[100,280],[300,264]],[[1,780],[50,260],[100,210],[300,200]],[[1,1095],[50,365],[100,300],[300,280]]]],"lam":[[],[],[],[]],"sizeHead":"Tamaño","id":"tarjeteria","cat":"Emprendedores","name":"Tarjetería","desc":"Papel ilustración 220gr y 300gr","unit":"unidad","bifaz":false},{"sizes":["5×5cm","7×5cm","9×5cm"],"variants":["Precio"],"prices":[[[[50,200],[100,135],[300,130]]],[[[50,230],[100,155],[300,150]]],[[[50,300],[100,202],[300,195]]]],"lam":[[],[],[]],"sizeHead":"Tamaño","id":"tarjeteria-2","cat":"Emprendedores","name":"Tarjetería — con sticker de regalo","desc":"","unit":"unidad","bifaz":false},{"sizes":["10×5×5cm","15×5×5cm","20×5×5cm"],"variants":["Precio"],"prices":[[[[1,900],[10,300],[50,245],[100,235]]],[[[1,1350],[10,450],[50,370],[100,350]]],[[[1,2700],[10,900],[50,735],[100,700]]]],"lam":[[],[],[]],"sizeHead":"Tamaño","id":"cierrabolsas-plegable","cat":"Emprendedores","name":"Cierrabolsas plegable","desc":"Papel ilustración 300gr para plegar y cerrar bolsas","unit":"unidad","bifaz":false},{"sizes":[""],"variants":["Autoadhesivo","OPP (Blanco o clear)"],"prices":[[[[1,6250],[2,3875],[26,3700]],[[1,9000],[2,5250],[26,4950]]]],"lam":[[]],"sizeHead":"Cantidad","id":"stickers-cierrabolsas","cat":"Emprendedores","name":"Stickers cierrabolsas","desc":"Stickers para cerrar bolsas. Servicio por pliego 29x41cm","unit":"unidad","bifaz":false},{"sizes":["8.5×5.5cm","10×7.5cm","15×11cm"],"variants":["Simple","Bifaz"],"prices":[[[[1,1080],[10,360],[50,290],[100,270]],[[1,1290],[10,430],[50,350],[100,325]]],[[[1,1875],[10,625],[50,510],[100,470]],[[1,2250],[10,750],[50,610],[100,565]]],[[[1,5625],[10,1875],[50,1525],[100,1410]],[[1,6750],[10,2250],[50,1825],[100,1695]]]],"lam":[[{"label":"Adicional lanyard","price":1000,"kind":"u"}],[{"label":"Adicional lanyard","price":1000,"kind":"u"}],[{"label":"Adicional lanyard","price":1000,"kind":"u"}]],"sizeHead":"Tamaño","id":"carteles-identificadores","cat":"Emprendedores","name":"Carteles identificadores","desc":"Carteles identificadores plastificados con hueco para colgar","unit":"unidad","bifaz":false},{"sizes":["Rectas"],"variants":["Precio"],"prices":[[[[1,15000],[2,12000],[3,10000],[5,8000],[12,7000]]]],"lam":[[]],"sizeHead":"Tipo","id":"tazas","cat":"Sublimación","name":"Tazas","desc":"Tazas cerámicas sublimadas","unit":"unidad","bifaz":false},{"sizes":["Lanyards cortos"],"variants":["Precio"],"prices":[[[[1,4300],[10,3300],[25,2800]]]],"lam":[[]],"sizeHead":"Producto","id":"lanyards-cortos","cat":"Sublimación","name":"Lanyards cortos","desc":"Sublimados","unit":"unidad","bifaz":false}];
+var DATA=SNAP;
+var PAGES=[['stickers','Stickers'],['papeleria','Papelería'],['prints','Prints'],['merch','Merch'],['emprendedores','Emprendedores'],['sublimacion','Sublimación']];
+function ptxt(el){return (el.textContent||'').replace(/\s+/g,' ').trim()}
+function cellTiers(c){var h=c.innerHTML,re=/<strong>(Unidad|Dsd (\d+)[up]\.)<\/strong>\s*\$(\d+)/g,m,t=[];while((m=re.exec(h)))t.push([m[1]==='Unidad'?1:parseInt(m[2],10),parseInt(m[3],10)]);if(t.length)return t;var x=/^\$(\d+)(?:\s*c\/u)?$/.exec(ptxt(c));return x?[[1,parseInt(x[1],10)]]:null}
+function lamOf(c){var m=/^\$(\d+)\s*(p\/cara|c\/u)$/.exec(ptxt(c));return m?{price:parseInt(m[1],10),kind:m[2]==='p/cara'?'cara':'u'}:null}
+function minOf(l){return l==='Unidad'?1:parseInt(l.match(/\d+/)[0],10)}
+function parseTable(tb){
+var heads=[].map.call(tb.querySelectorAll('th'),ptxt);
+var rows=[].map.call(tb.querySelectorAll('tbody tr'),function(r){return [].slice.call(r.children)});
+var labels=rows.map(function(r){return ptxt(r[0])});
+var typeB=labels.every(function(l){return /^(Unidad|Dsd \d+[up]\.)$/.test(l)});
+var vc=[],lc=[];heads.forEach(function(h,i){if(i>0){if(/^Lam/.test(h)||/^Adicional/.test(h))lc.push(i);else if(h!=='Muestra')vc.push(i)}});
+var vn=vc.map(function(i){return heads[i]});
+function lamRow(r){var o=[];lc.forEach(function(c){var l=lamOf(r[c]);if(l)o.push({label:heads[c],price:l.price,kind:l.kind})});return o}
+if(typeB){var rp=vc.map(function(c){var ts=[];for(var k=0;k<rows.length;k++){var v=cellTiers(rows[k][c]);if(!v)return null;ts.push([minOf(labels[k]),v[0][1]])}return ts});
+return{sizes:[''],variants:vn,prices:[rp],lam:[lamRow(rows[0])],sizeHead:heads[0]}}
+return{sizes:labels,variants:vn,prices:rows.map(function(r){return vc.map(function(c){return cellTiers(r[c])})}),lam:rows.map(lamRow),sizeHead:heads[0]}}
+function parseDoc(doc,catName){var out=[];
+[].forEach.call(doc.querySelectorAll('main .price-card'),function(card){
+var cid=card.id,title=ptxt(card.querySelector('h3')),sb=card.querySelector('.subtitle'),desc=sb?ptxt(sb):'';
+var tables=[].slice.call(card.querySelectorAll('table.price-table')),extras=[].map.call(card.querySelectorAll('.extras-title'),ptxt);
+if(cid==='acrilicos'){var bars=[],re=/<p>Sección (\d)<\/p><p>\$(\d+)<\/p>/g,m,h=card.innerHTML;while((m=re.exec(h)))bars.push(parseInt(m[2],10));
+var hd=[].map.call(tables[0].querySelectorAll('th'),ptxt).slice(1);
+var info={};[].forEach.call(tables[0].querySelectorAll('tbody tr'),function(r){var tds=[].slice.call(r.children);info[ptxt(tds[0])]=tds.slice(1).map(function(c){return parseInt(ptxt(c),10)})});
+var ad=[].map.call(card.querySelectorAll('.adicionales-item'),function(e){var ps=e.querySelectorAll('p'),pr=/\$(\d+)/.exec(ptxt(e.querySelector('p.price')));return{n:ptxt(ps[0]),p:parseInt(pr[1],10)}});
+out.push({id:cid,cat:catName,name:title,desc:'Se vende por sección. Si salen más productos, no hay cobro adicional.',unit:'sección',sizes:hd,variants:['Precio'],prices:bars.map(function(p){return [[[1,p]]]}),lam:bars.map(function(){return []}),bifaz:false,sizeHead:'Sección',addons:ad,info:info});return}
+tables.forEach(function(tb,ti){var p=parseTable(tb);var name=ti===0?title:title+' — '+(extras.length>=ti?extras[ti-1]:'otro');
+if(ti>0&&extras.length>=ti&&!extras[ti-1])name=title+' — más opciones';
+p.id=cid+(ti===0?'':'-'+(ti+1));p.cat=catName;p.name=name;p.desc=ti===0?desc:'';p.unit='unidad';p.bifaz=/bifaz/i.test(title);out.push(p)})});
+return out}
+
+function liveLoad(){return Promise.all(PAGES.map(function(pg){return fetch('../'+pg[0]+'/',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){return parseDoc(new DOMParser().parseFromString(t,'text/html'),pg[1])})})).then(function(all){var d=[].concat.apply([],all);return d.length>=25?d:null}).catch(function(){return null})}
+var WA='5491166116634';
+var COMBOS=[
+{id:'cumpleanos',t:'Armá tu cumpleaños',d:'Decoración, topper y souvenires a elección'},
+{id:'emprendedor',t:'Combo emprendedor',d:'Tarjetas de presentación, de agradecimiento y cierrabolsas'},
+{id:'escolar',t:'Combo escolar',d:'Etiquetas, marcapáginas imantados, horario y calendario'},
+{id:'favs',t:'Combo favs',d:'Pins, photocards, polaroids y póster'}];
+var OPEN=null;
+var SV=[{k:'plan',n:'Planchitas de stickers',q:10,u:'planchitas',p:6500},{k:'stk',n:'Stickers 7 cm',q:20,u:'stickers',p:3000},{k:'p55',n:'Pins 55 mm',q:10,u:'pins',p:7500,h:9500},{k:'p38',n:'Pins 38 mm',q:20,u:'pins',p:6500,h:8500},{k:'taza',n:'Tazas',q:10,u:'tazas',p:70000},{k:'cal',n:'Calendarios',q:10,u:'calendarios',p:15000},{k:'llav',n:'Llaveros acrílicos',q:10,u:'llaveros',p:40000}];
+var C0=function(){return{g:1,ban:false,bx:0,pos:false,top:'none',sv:{},ho:{}}},E0=function(){return{q:50,fp:0,fa:0,sz:2,gr:0}},K0=function(){return{holo:false,car:0}},F0=function(){return{pins:0,pcf:0,pch:false,pof:0,poh:false,ps:'A3',pq:1,adi:false,ll:'Argolla llavero'}};
+var C=C0(),E=E0(),K=K0(),F=F0();
+function $(n){return '$'+Math.round(n).toLocaleString('es-AR')}
+function P(id){return DATA.filter(function(p){return p.id===id})[0]}
+function unit(t,q){var u=null;t.forEach(function(x){if(q>=x[0])u=x[1]});return u}
+function cost(id,size,variant,q){var p=P(id),s=Math.max(0,p.sizes.indexOf(size)),v=Math.max(0,p.variants.indexOf(variant));var u=unit(p.prices[s][v],q);return{u:u,t:u*q}}
+function lamP(id,size,label){var p=P(id),s=Math.max(0,p.sizes.indexOf(size));var l=(p.lam[s]||[]).filter(function(x){return x.label===label})[0];return l?l.price:0}
+var PMIN={'A3':1,'A4':2,'A5':4,'A5 cuadrados':6};
+function posPrice(){return C.top==='lam'?2600:3500}
+function calcC(){var L=[],g=C.g;
+if(C.ban){L.push(['Banderines (10 u.)',10000]);if(C.bx>0)L.push(['Banderines adicionales ('+C.bx+' u.)',C.bx*850])}
+if(C.pos)L.push(['Póster',posPrice()]);
+if(C.top==='lam')L.push(['Topper laminado',4000]);
+if(C.top==='acr')L.push(['Topper acrílico (a consultar)',28000]);
+SV.forEach(function(s){if(C.sv[s.k]){var h=s.h&&C.ho[s.k];L.push([s.n+(h?' holográficos':'')+' · '+(s.q*g)+' '+s.u,(h?s.h:s.p)*g])}});
+return L}
+var SZ=['5×5cm','7×5cm','9×5cm'],GR=['220gr','300gr'];
+function tv(g,f){return 'Ilustración '+GR[g]+(f?' bifaz':'')}
+function calcE(){var a=cost('tarjeteria',SZ[E.sz],tv(E.gr,E.fp),E.q),b=cost('tarjeteria','10×8cm',tv(E.gr,E.fa),E.q),c=cost('stickers-cierrabolsas','','OPP (Blanco o clear)',1);
+return [['Tarjetas de presentación '+SZ[E.sz].replace('cm',' cm')+' · '+GR[E.gr]+' · '+(E.fp?'doble faz':'simple')+' · '+E.q+' u.',a.t],['Tarjetas de agradecimiento 10×8 cm · '+GR[E.gr]+' · '+(E.fa?'doble faz':'simple')+' · '+E.q+' u.',b.t],['Cierrabolsas en OPP · 1 pliego',c.t]]}
+function calcK(){var L=[];
+L.push(['Etiquetas en OPP · 2 pliegos',cost('planchitas-de-stickers','','OPP (Blanco o clear)',2).t]);
+var mp=P('marcapaginas-imantado-simple-4-10-10cm'),mu=unit(mp.prices[0][0],28);
+L.push(['2 marcapáginas imantados simple',mu*2]);
+if(K.holo)L.push(['Marcapáginas holográficos (2 u.)',lamP('marcapaginas-imantado-simple-4-10-10cm','','Lam. Holo')*2]);
+var h=unit(P('prints-papel-ilustracion-una-cara').prices[2][2],104)+2*lamP('prints-papel-ilustracion-una-cara','A5','Laminado');
+L.push(['Horario semanal (A5 laminado)',h]);L.push(['Calendario anual (A5 laminado)',h]);
+if(K.car>0)L.push(['Carátulas de carpeta 19×24 cm · '+K.car+' u.',cost('prints-papel-ilustracion-una-cara','A4','150gr',K.car).t]);
+return L}
+function calcF(){var L=[],pv=['Común','Holográfico'][F.pins];
+L.push(['6 pins 55 mm '+(F.pins?'holográficos':'comunes'),cost('pins-55mm','',pv,6).t]);
+var pcv=['Simple','Bifaz'][F.pcf],pc=cost('photocards','',pcv,200);
+L.push(['10 photocards '+pcv.toLowerCase(),pc.u*10]);
+if(F.pch)L.push(['Photocards holográficas',lamP('photocards','','Lam. Holo')*10*(F.pcf?2:1)]);
+var pov=['Simple','Bifaz'][F.pof],po=cost('polaroids','Mini (5.4×8.6cm)',pov,40);
+L.push(['10 polaroids mini '+pov.toLowerCase(),po.u*10]);
+if(F.poh)L.push(['Polaroids holográficas',lamP('polaroids','Mini (5.4×8.6cm)','Lam. Holo')*10*(F.pof?2:1)]);
+L.push(['Póster '+F.ps+' · '+F.pq+' u.',cost('prints-papel-ilustracion-una-cara',F.ps,'220gr',F.pq).t]);
+if(F.adi){L.push(['Adicional: 1 standee y 2 llaveros',P('acrilicos').prices[0][0][0][1]]);var ad=P('acrilicos').addons.filter(function(a){return a.n===F.ll})[0];L.push(['2 × '+F.ll,ad.p*2])}
+return L}
+function lines(id){return id==='cumpleanos'?calcC():id==='emprendedor'?calcE():id==='escolar'?calcK():calcF()}
+function tot(L){var t=0;L.forEach(function(l){t+=l[1]});return t}
+function opt(a,on,x){return '<div class="cb-opt'+(on?' on':'')+'" role="button" tabindex="0" aria-pressed="'+on+'" data-a="'+a+'">'+x+'</div>'}
+function optf(a,on,x){return opt(a,on,x).replace('class="cb-opt','class="cb-opt flat')}
+function tick(on){return '<span class="cb-tick">'+(on?'✓':'')+'</span>'}
+function pills(prefix,labels,cur){var h='<div class="cb-seg" style="margin:0 0 14px;flex-wrap:wrap">';labels.forEach(function(l,i){h+='<button class="cb-pill'+(cur===i?' act':'')+'" data-a="'+prefix+':'+i+'">'+l+'</button>'});return h+'</div>'}
+function sumHtml(L,note,gift){var m='';
+if(!L.length)m+='<p class="cb-empty">Elegí lo que quieras sumar y se arma acá.</p>';
+L.forEach(function(l){m+='<div class="cb-ln"><span>'+l[0]+'</span><b>'+$(l[1])+'</b></div>'});
+if(L.length)m+='<div class="cb-ln t"><span>Total estimado</span><span>'+$(tot(L))+'</span></div>';
+if(gift)m+='<p class="cb-gift">'+gift+'</p>';
+if(note)m+='<p class="cb-note">'+note+'</p>';
+var c=COMBOS.filter(function(x){return x.id===OPEN})[0];
+var msg='Hola! Quiero este combo: '+c.t+'\n'+L.map(function(l){return '• '+l[0]+' — '+$(l[1])}).join('\n')+'\n\nTotal: '+$(tot(L));
+m+='<div class="cb-actions"><a class="cb-wa" style="text-decoration:none;display:inline-block" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a><button class="cb-pill" data-a="rs">Empezar de nuevo</button></div>';
+return '<div class="cb-sum">'+m+'</div>'}
+function bodyC(){var g=C.g,h='';
+h+='<div class="cb-guests">Invitados <button class="cb-pill" data-a="gm" aria-label="Menos invitados">−</button><b>'+(g*10)+'</b><button class="cb-pill" data-a="gp" aria-label="Más invitados">+</button><span class="cb-sub">Precio base para 10. Se suma de a 10.</span></div>';
+h+='<div class="cb-sec"><h4>Decoración</h4><div class="cb-grid">';
+h+=opt('ban',C.ban,'<div class="cb-nm"><span>Banderines</span>'+tick(C.ban)+'</div><div class="cb-sub">10 banderines · adicional $850 c/u</div><div class="cb-pr">'+$(10000)+'</div>'+(C.ban?'<div class="cb-step">Adicionales <button class="cb-pill" data-a="bm" aria-label="Menos banderines">−</button><b>'+C.bx+'</b><button class="cb-pill" data-a="bp" aria-label="Más banderines">+</button></div>':''));
+h+=opt('pos',C.pos,'<div class="cb-nm"><span>Póster</span>'+tick(C.pos)+'</div><div class="cb-pr">'+$(posPrice())+(C.top==='lam'?'<span class="cb-old">$3.500</span>':'')+'</div>');
+h+='</div></div><div class="cb-sec"><h4>Topper de torta</h4><div class="cb-grid">';
+h+=opt('t0',C.top==='none','<div class="cb-nm"><span>Sin topper</span>'+tick(C.top==='none')+'</div><div class="cb-pr">$0</div>');
+h+=opt('tl',C.top==='lam','<div class="cb-nm"><span>Laminado</span>'+tick(C.top==='lam')+'</div><div class="cb-pr">$4.000</div>');
+h+=opt('ta',C.top==='acr','<div class="cb-nm"><span>Acrílico</span>'+tick(C.top==='acr')+'</div><div class="cb-sub">A consultar</div><div class="cb-pr">$28.000</div>');
+h+='</div></div><div class="cb-sec"><h4>Souvenires</h4><p class="cb-hint">Los precios son por la cantidad de invitados elegida.</p><div class="cb-grid">';
+SV.forEach(function(s){var on=!!C.sv[s.k],ho=s.h&&C.ho[s.k];
+var x='<div class="cb-nm"><span>'+s.n+'</span>'+tick(on)+'</div><div class="cb-sub">'+(s.q*g)+' '+s.u+'</div><div class="cb-pr">'+$((ho?s.h:s.p)*g)+'</div>';
+if(s.h&&on)x+='<div class="cb-seg"><button class="cb-pill'+(ho?'':' act')+'" data-a="hc:'+s.k+'">Común</button><button class="cb-pill'+(ho?' act':'')+'" data-a="hh:'+s.k+'">Holo</button></div>';
+h+=opt('sv:'+s.k,on,x)});
+h+='</div></div>';
+return h+sumHtml(calcC(),C.top==='acr'?'El topper acrílico se confirma antes de cerrar el pedido.':'')}
+function bodyE(){var h='<div class="cb-qty">Cantidad de tarjetas ';
+[50,100,300].forEach(function(q){h+='<button class="cb-pill'+(E.q===q?' act':'')+'" data-a="eq:'+q+'">'+q+'</button>'});
+h+='</div><div class="cb-box"><h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tamaño de la tarjeta de presentación</h4>'+pills('es',['5×5 cm','7×5 cm','9×5 cm'],E.sz)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Gramaje (papel ilustración)</h4>'+pills('eg',['220gr','300gr'],E.gr)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de presentación</h4>'+pills('ep',['Simple','Doble faz'],E.fp)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de agradecimiento</h4>'+pills('ea',['Simple','Doble faz'],E.fa)+'</div>';
+return h+sumHtml(calcE(),'Incluye 1 pliego de stickers cierrabolsas en OPP (blanco o clear).')}
+function bodyK(){var h='<div class="cb-box"><h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Incluye</h4><ul class="cb-list">'
++'<li>150 etiquetas chicas</li><li>20 etiquetas medianas</li><li>20 etiquetas grandes</li><li>2 marcapáginas imantados simple</li><li>Horario semanal</li><li>Calendario anual</li></ul>'
++'<h4 style="margin:14px 0 8px;font-size:.95rem;color:var(--azul)">Opcionales</h4><div class="cb-grid">';
+h+=optf('kh',K.holo,'<div class="cb-nm"><span>Marcapáginas holográficos</span>'+tick(K.holo)+'</div><div class="cb-sub">Adicional holográfico</div><div class="cb-pr">+'+$(lamP('marcapaginas-imantado-simple-4-10-10cm','','Lam. Holo')*2)+'</div>');
+h+=optf('kc',K.car>0,'<div class="cb-nm"><span>Carátulas de carpeta</span>'+tick(K.car>0)+'</div><div class="cb-sub">19×24 cm · ilustración 150gr</div><div class="cb-step" style="flex-wrap:nowrap"><button class="cb-pill" data-a="cm" aria-label="Menos">−</button><b>'+K.car+'</b><button class="cb-pill" data-a="cp" aria-label="Más">+</button></div>');
+h+='</div></div>';
+return h+sumHtml(calcK(),'','De regalo: 1 planchita de stickers de 15×7cm y 1 minipostal de tu personaje favorito.')}
+function bodyF(){var h='<div class="cb-box">',H=function(t){return '<h4 style="margin:14px 0 8px;font-size:.95rem;color:var(--azul)">'+t+'</h4>'};
+h+=H('Pins 55 mm (6 unidades)').replace('margin:14px','margin:0')+pills('fp',['Comunes','Holográficos'],F.pins);
+h+=H('Photocards (10 unidades)')+pills('fq',['Simple','Doble faz'],F.pcf)+'<div class="cb-grid" style="margin-bottom:6px">'+optf('fqh',F.pch,'<div class="cb-nm"><span>Holográficas</span>'+tick(F.pch)+'</div>')+'</div>';
+h+=H('Polaroids mini (10 unidades)')+pills('fo',['Simple','Doble faz'],F.pof)+'<div class="cb-grid" style="margin-bottom:6px">'+optf('foh',F.poh,'<div class="cb-nm"><span>Holográficas</span>'+tick(F.poh)+'</div>')+'</div>';
+h+=H('Póster · papel ilustración 220gr')+pills('fs',['A3','A4','A5','A5 cuadrados'],['A3','A4','A5','A5 cuadrados'].indexOf(F.ps))+'<div class="cb-step" style="margin:0 0 6px">Cantidad <button class="cb-pill" data-a="pm" aria-label="Menos">−</button><b>'+F.pq+'</b><button class="cb-pill" data-a="pp" aria-label="Más">+</button></div><p class="cb-hint">Mínimo: 1 A3, 2 A4, 4 A5 o 6 A5 cuadrados.</p>';
+h+=H('Adicional')+'<div class="cb-grid">'+optf('fa',F.adi,'<div class="cb-nm"><span>1 standee y 2 llaveros</span>'+tick(F.adi)+'</div><div class="cb-sub">Acrílico, sección 1</div><div class="cb-pr">+'+$(P('acrilicos').prices[0][0][0][1])+'</div>')+'</div>';
+if(F.adi){h+=H('Para los llaveros')+'<div class="cb-seg" style="flex-wrap:wrap">';['Argolla llavero','Cadena de bolitas','Mosquetón candado'].forEach(function(n){var ad=P('acrilicos').addons.filter(function(a){return a.n===n})[0];h+='<button class="cb-pill'+(F.ll===n?' act':'')+'" data-a="fl:'+n+'">'+n+' · '+$(ad.p)+' c/u</button>'});h+='</div>'}
+h+='</div>';return h+sumHtml(calcF(),'')}
+function renderAll(){var h='';
+COMBOS.forEach(function(c){var o=OPEN===c.id;
+var body=!o?'':(c.id==='cumpleanos'?bodyC():c.id==='emprendedor'?bodyE():c.id==='escolar'?bodyK():bodyF());
+h+='<div class="price-card cb-combo'+(o?' open':'')+'" id="'+c.id+'"><button class="cb-head" aria-expanded="'+o+'" data-a="tg:'+c.id+'"><span class="cb-ht"><span class="cb-title">'+c.t+'</span><span class="cb-desc">'+c.d+'</span></span><span class="cb-chev">⌄</span></button><div class="cb-body">'+body+'</div></div>'});
+document.getElementById('cb-list').innerHTML=h;
+var bar=document.getElementById('cb-bar');
+if(OPEN){bar.style.display='flex';bar.innerHTML='<span>Total estimado</span><b>'+$(tot(lines(OPEN)))+'</b>'}else bar.style.display='none'}
+function act(a){
+if(a.indexOf('tg:')===0){var id=a.slice(3);OPEN=OPEN===id?null:id}
+else if(a==='gp'){if(C.g<10)C.g++}else if(a==='gm'){if(C.g>1)C.g--}
+else if(a==='ban'){C.ban=!C.ban;if(!C.ban)C.bx=0}else if(a==='bp')C.bx++;else if(a==='bm'){if(C.bx>0)C.bx--}
+else if(a==='pos')C.pos=!C.pos;else if(a==='t0')C.top='none';else if(a==='tl')C.top='lam';else if(a==='ta')C.top='acr';
+else if(a.indexOf('sv:')===0){var k=a.slice(3);C.sv[k]=!C.sv[k]}
+else if(a.indexOf('hc:')===0)C.ho[a.slice(3)]=false;else if(a.indexOf('hh:')===0)C.ho[a.slice(3)]=true;
+else if(a.indexOf('eq:')===0)E.q=+a.slice(3);else if(a.indexOf('ep:')===0)E.fp=+a.slice(3);else if(a.indexOf('es:')===0)E.sz=+a.slice(3);else if(a.indexOf('eg:')===0)E.gr=+a.slice(3);else if(a.indexOf('ea:')===0)E.fa=+a.slice(3);
+else if(a==='kh')K.holo=!K.holo;else if(a==='cp')K.car++;else if(a==='cm'){if(K.car>0)K.car--}else if(a==='kc'){K.car=K.car>0?0:1}
+else if(a.indexOf('fp:')===0)F.pins=+a.slice(3);else if(a.indexOf('fq:')===0)F.pcf=+a.slice(3);else if(a==='fqh')F.pch=!F.pch;
+else if(a.indexOf('fo:')===0)F.pof=+a.slice(3);else if(a==='foh')F.poh=!F.poh;
+else if(a.indexOf('fs:')===0){F.ps=['A3','A4','A5','A5 cuadrados'][+a.slice(3)];F.pq=PMIN[F.ps]}else if(a==='pp')F.pq++;else if(a==='pm'){if(F.pq>PMIN[F.ps])F.pq--}
+else if(a==='fa')F.adi=!F.adi;else if(a.indexOf('fl:')===0)F.ll=a.slice(3);
+else if(a==='rs'){if(OPEN==='cumpleanos')C=C0();if(OPEN==='emprendedor')E=E0();if(OPEN==='escolar')K=K0();if(OPEN==='favs')F=F0()}
+renderAll()}
+document.querySelector('main').addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(b)act(b.getAttribute('data-a'))});
+document.querySelector('main').addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.getAttribute('role')==='button'){e.preventDefault();act(e.target.getAttribute('data-a'))}});
+if(location.hash&&COMBOS.some(function(c){return c.id===location.hash.slice(1)}))OPEN=location.hash.slice(1);
+window.addEventListener('hashchange',function(){var id=location.hash.slice(1);if(COMBOS.some(function(c){return c.id===id})){OPEN=id;renderAll();var el=document.getElementById(id);if(el)setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},100)}});
+renderAll();
+liveLoad().then(function(d){if(d&&JSON.stringify(d)!==JSON.stringify(DATA)){DATA=d;renderAll()}});
+</script>
+
 <footer>
   <div class="footer-card">
     <h3><span style="color:#fb56b2">Listx </span><span class="rainbow-text" style="background:linear-gradient(90deg,#FFB347,#FFD152,#48C9B0,#7B8FE8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">para imprimir?</span></h3>
@@ -69,7 +296,7 @@
         /bizcochito.factory
       </a>
     </div>
-    <div class="footer-note"><p>Última modificación: 26/10/26 · Bizcochito Factory · Tu arte, tu merch a todo color</p></div>
+    <div class="footer-note"><p>Última modificación: 29/10/26 · Bizcochito Factory · Tu arte, tu merch a todo color</p></div>
   </div>
 </footer>
 <script src="../js/products.js"></script>
