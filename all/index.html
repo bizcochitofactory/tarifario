@@ -14,7 +14,11 @@
     font-family: 'Poppins', sans-serif; color: #C2185B; font-size: 1.5rem; font-weight: 800;
   }
   .all-cat-title:first-of-type { margin-top: 0; }
-  .cards { max-width: 700px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 20px; }
+  .cards { max-width: 700px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 0; }
+  /* Cada tabla va dentro de un marco cuadrado (o más alto si la tabla es alta) con aire alrededor,
+     así al sacar una captura cuadrada no entra contenido de otras tablas. */
+  .shot-frame { display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+  .shot-frame > .price-card { width: 100%; margin: 0; }
   #loading { text-align: center; padding: 60px 16px; font-family: 'Poppins', sans-serif; color: #3641a5; }
 </style>
 </head>
@@ -56,7 +60,35 @@ async function buildAll() {
     }
   }
   loading.remove();
+  wrapFrames();
 }
+
+// Aire a cada lado de la tabla (px) para que la captura cuadrada quede limpia
+const SHOT_MARGIN = 60;
+
+function wrapFrames() {
+  document.querySelectorAll('#all-content .cards > .price-card').forEach((card) => {
+    const frame = document.createElement('div');
+    frame.className = 'shot-frame';
+    card.parentNode.insertBefore(frame, card);
+    frame.appendChild(card);
+    if (window.ResizeObserver) new ResizeObserver(layoutFrames).observe(card);
+  });
+  layoutFrames();
+}
+
+// Alto del marco = el mayor entre ancho y alto de la tabla + aire arriba y abajo.
+// Si la tabla es más ancha que alta, queda un cuadrado con la tabla centrada.
+function layoutFrames() {
+  document.querySelectorAll('.shot-frame').forEach((frame) => {
+    const card = frame.firstElementChild;
+    const side = Math.max(card.offsetWidth, card.offsetHeight) + SHOT_MARGIN * 2;
+    frame.style.height = side + 'px';
+  });
+}
+window.addEventListener('resize', layoutFrames);
+window.addEventListener('load', layoutFrames);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutFrames);
 
 buildAll();
 </script>
