@@ -29,6 +29,7 @@ document.addEventListener('click', () => {
     "Emprendedores": "emprendedores",
     "Merch": "merch",
     "Sublimación": "sublimacion",
+    "Combos": "combos",
   };
 
   function setupSearch(root) {
