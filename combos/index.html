@@ -157,7 +157,7 @@ var COMBOS=[
 {id:'favs',t:'Combo favs',d:'Pins, photocards, polaroids y póster'}];
 var OPEN=null;
 var SV=[{k:'plan',n:'Planchitas de stickers',q:10,u:'planchitas',p:6500},{k:'stk',n:'Stickers 7 cm',q:20,u:'stickers',p:3000},{k:'p55',n:'Pins 55 mm',q:10,u:'pins',p:7500,h:9500},{k:'p38',n:'Pins 38 mm',q:20,u:'pins',p:6500,h:8500},{k:'taza',n:'Tazas',q:10,u:'tazas',p:70000},{k:'cal',n:'Calendarios',q:10,u:'calendarios',p:15000},{k:'llav',n:'Llaveros acrílicos',q:10,u:'llaveros',p:40000}];
-var C0=function(){return{g:1,ban:false,bx:0,pos:false,top:'none',sv:{},ho:{}}},E0=function(){return{q:50,fp:0,fa:0,sz:2,gr:0}},K0=function(){return{holo:false,car:0}},F0=function(){return{pins:0,pcf:0,pch:false,pof:0,poh:false,ps:'A3',pq:1,adi:false,ll:'Argolla llavero'}};
+var C0=function(){return{g:1,ban:false,bx:0,pos:false,top:'none',sv:{},ho:{}}},E0=function(){return{q:50,fp:0,fa:0,sz:2,gr:0}},K0=function(){return{holo:false,car:0,oj:false}},F0=function(){return{pins:0,pcf:0,pch:false,pof:0,poh:false,ps:'A3',pq:1,adi:false,ll:'Argolla llavero'}};
 var C=C0(),E=E0(),K=K0(),F=F0();
 function $(n){return '$'+Math.round(n).toLocaleString('es-AR')}
 function P(id){return DATA.filter(function(p){return p.id===id})[0]}
@@ -185,6 +185,7 @@ if(K.holo)L.push(['Marcapáginas holográficos (2 u.)',lamP('marcapaginas-imanta
 var h=unit(P('prints-papel-ilustracion-una-cara').prices[2][2],104)+2*lamP('prints-papel-ilustracion-una-cara','A5','Laminado');
 L.push(['Horario semanal (A5 laminado)',h]);L.push(['Calendario anual (A5 laminado)',h]);
 if(K.car>0)L.push(['Carátulas de carpeta 19×24 cm · '+K.car+' u.',cost('prints-papel-ilustracion-una-cara','A4','150gr',K.car).t]);
+if(K.oj)L.push(['300 ojalillos personalizados',(cost('planchitas-de-stickers','','OPP (Blanco o clear)',3).t-cost('planchitas-de-stickers','','OPP (Blanco o clear)',2).t)]);
 return L}
 function calcF(){var L=[],pv=['Común','Holográfico'][F.pins];
 L.push(['6 pins 55 mm '+(F.pins?'holográficos':'comunes'),cost('pins-55mm','',pv,6).t]);
@@ -231,13 +232,14 @@ h+='</div></div>';
 return h+sumHtml(calcC(),C.top==='acr'?'El topper acrílico se confirma antes de cerrar el pedido.':'')}
 function bodyE(){var h='<div class="cb-qty">Cantidad de tarjetas ';
 [50,100,300].forEach(function(q){h+='<button class="cb-pill'+(E.q===q?' act':'')+'" data-a="eq:'+q+'">'+q+'</button>'});
-h+='</div><div class="cb-box"><h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tamaño de la tarjeta de presentación</h4>'+pills('es',['5×5 cm','7×5 cm','9×5 cm'],E.sz)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Gramaje (papel ilustración)</h4>'+pills('eg',['220gr','300gr'],E.gr)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de presentación</h4>'+pills('ep',['Simple','Doble faz'],E.fp)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de agradecimiento</h4>'+pills('ea',['Simple','Doble faz'],E.fa)+'</div>';
+h+='</div><div class="cb-box"><h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Gramaje (papel ilustración)</h4>'+pills('eg',['220gr','300gr'],E.gr)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de presentación: tamaño</h4>'+pills('es',['5×5 cm','7×5 cm','9×5 cm'],E.sz)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de presentación: simple o doble faz</h4>'+pills('ep',['Simple','Doble faz'],E.fp)+'<h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Tarjetas de agradecimiento: simple o doble faz</h4>'+pills('ea',['Simple','Doble faz'],E.fa)+'</div>';
 return h+sumHtml(calcE(),'Incluye 1 pliego de stickers cierrabolsas en OPP (blanco o clear).')}
 function bodyK(){var h='<div class="cb-box"><h4 style="margin:0 0 8px;font-size:.95rem;color:var(--azul)">Incluye</h4><ul class="cb-list">'
-+'<li>150 etiquetas chicas</li><li>20 etiquetas medianas</li><li>20 etiquetas grandes</li><li>2 marcapáginas imantados simple</li><li>Horario semanal</li><li>Calendario anual</li></ul>'
++'<li>150 etiquetas chicas (para lápices, lapiceras, marcadores y útiles chicos)</li><li>20 etiquetas medianas (para regla, plasticola y útiles medianos)</li><li>20 etiquetas grandes (para cuadernos, carpetas y objetos más grandes)</li><li>2 marcapáginas imantados simple</li><li>Horario semanal</li><li>Calendario anual</li></ul>'
 +'<h4 style="margin:14px 0 8px;font-size:.95rem;color:var(--azul)">Opcionales</h4><div class="cb-grid">';
 h+=optf('kh',K.holo,'<div class="cb-nm"><span>Marcapáginas holográficos</span>'+tick(K.holo)+'</div><div class="cb-sub">Adicional holográfico</div><div class="cb-pr">+'+$(lamP('marcapaginas-imantado-simple-4-10-10cm','','Lam. Holo')*2)+'</div>');
 h+=optf('kc',K.car>0,'<div class="cb-nm"><span>Carátulas de carpeta</span>'+tick(K.car>0)+'</div><div class="cb-sub">19×24 cm · ilustración 150gr</div><div class="cb-step" style="flex-wrap:nowrap"><button class="cb-pill" data-a="cm" aria-label="Menos">−</button><b>'+K.car+'</b><button class="cb-pill" data-a="cp" aria-label="Más">+</button></div>');
+h+=optf('kj',K.oj,'<div class="cb-nm"><span>300 ojalillos personalizados</span>'+tick(K.oj)+'</div><div class="cb-pr">+'+$((cost('planchitas-de-stickers','','OPP (Blanco o clear)',3).t-cost('planchitas-de-stickers','','OPP (Blanco o clear)',2).t))+'</div>');
 h+='</div></div>';
 return h+sumHtml(calcK(),'','De regalo: 1 planchita de stickers de 15×7cm y 1 minipostal de tu personaje favorito.')}
 function bodyF(){var h='<div class="cb-box">',H=function(t){return '<h4 style="margin:14px 0 8px;font-size:.95rem;color:var(--azul)">'+t+'</h4>'};
@@ -263,7 +265,7 @@ else if(a==='pos')C.pos=!C.pos;else if(a==='t0')C.top='none';else if(a==='tl')C.
 else if(a.indexOf('sv:')===0){var k=a.slice(3);C.sv[k]=!C.sv[k]}
 else if(a.indexOf('hc:')===0)C.ho[a.slice(3)]=false;else if(a.indexOf('hh:')===0)C.ho[a.slice(3)]=true;
 else if(a.indexOf('eq:')===0)E.q=+a.slice(3);else if(a.indexOf('ep:')===0)E.fp=+a.slice(3);else if(a.indexOf('es:')===0)E.sz=+a.slice(3);else if(a.indexOf('eg:')===0)E.gr=+a.slice(3);else if(a.indexOf('ea:')===0)E.fa=+a.slice(3);
-else if(a==='kh')K.holo=!K.holo;else if(a==='cp')K.car++;else if(a==='cm'){if(K.car>0)K.car--}else if(a==='kc'){K.car=K.car>0?0:1}
+else if(a==='kh')K.holo=!K.holo;else if(a==='kj')K.oj=!K.oj;else if(a==='cp')K.car++;else if(a==='cm'){if(K.car>0)K.car--}else if(a==='kc'){K.car=K.car>0?0:1}
 else if(a.indexOf('fp:')===0)F.pins=+a.slice(3);else if(a.indexOf('fq:')===0)F.pcf=+a.slice(3);else if(a==='fqh')F.pch=!F.pch;
 else if(a.indexOf('fo:')===0)F.pof=+a.slice(3);else if(a==='foh')F.poh=!F.poh;
 else if(a.indexOf('fs:')===0){F.ps=['A3','A4','A5','A5 cuadrados'][+a.slice(3)];F.pq=PMIN[F.ps]}else if(a==='pp')F.pq++;else if(a==='pm'){if(F.pq>PMIN[F.ps])F.pq--}
@@ -296,7 +298,7 @@ liveLoad().then(function(d){if(d&&JSON.stringify(d)!==JSON.stringify(DATA)){DATA
         /bizcochito.factory
       </a>
     </div>
-    <div class="footer-note"><p>Última modificación: 29/10/26 · Bizcochito Factory · Tu arte, tu merch a todo color</p></div>
+    <div class="footer-note"><p>Última modificación: 04/11/26 · Bizcochito Factory · Tu arte, tu merch a todo color</p></div>
   </div>
 </footer>
 <script src="../js/products.js"></script>
